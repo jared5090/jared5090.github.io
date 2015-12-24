@@ -1,0 +1,229 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: #FFF;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.container > form {
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.container {
+}
+
+.container_table {
+}
+
+.main_content {
+}
+
+/* Navbar and Headers
+-------------------------------------------------- */
+
+.custom_navbar {
+  width: auto;
+  height: 5em;
+}
+
+.nav_header {
+  margin: 0.75em 2em;
+}
+
+.page-header {
+  text-align: center;
+}
+
+
+/* Show/hide elements
+-------------------------------------------------- */
+
+.hidden, .container_table {
+  display: none;
+}
+
+.display_table {
+  display: inline-block;
+}
+
+
+
+/* Text Format
+-------------------------------------------------- */
+
+h2, h3 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 1.25em;
+  text-align: left;
+  color: #000D10;
+}
+
+.container_table h3 {
+  margin-left: 1em;
+}
+
+/* Race List
+-------------------------------------------------- */
+
+#raceList {
+  margin-left: 11.5em;
+  position: absolute;
+  width: auto;
+  display: inline-block;
+}
+
+#raceList button {
+  margin: 0.4em 0.8em;
+}
+
+
+/* Tables and Dropdown Menus
+-------------------------------------------------- */
+
+#current_race, #results {
+  display: inline-block;
+}
+
+#results {
+  margin: 5em 0 0 4em;
+}
+
+#current_race {
+  margin: 5em 0 0 11.5em;
+}
+
+#current_race .head_row td:nth-child(2) {
+  padding-left: 4em;
+}
+
+table {
+  margin: 0;
+  padding: 1em;
+  background-color: #f1f2f4;
+  border: 1px solid black;
+}
+
+tr:nth-of-type(2n) {
+  background-color: #E4E6EA;
+} 
+
+.head_row {
+  color: #FFF;
+  background-color: #002B36;
+}
+
+tr td:nth-child(1) {
+  width: 10em;
+}
+
+td {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 2em;
+
+}
+
+.highlight {
+  background-color: green;
+}
+
+/*dropdown menus*/
+.betMenu {
+  width: 6em;
+  height: 2.5em;
+  margin: 0.4em 0.6em;
+}
+
+.table_button {
+  display: inline-block;
+  margin: 0 0 0 4.5em;
+}
+
+.submit_button, .reset_button {
+  margin-bottom: 1em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #CEDBE5;
+}
+
+
+/* Results
+-------------------------------------------------- */
+
+.list_width {
+  width: 5em;
+}
+
+.name_width {
+  width: 8em;
+}
+
+.inline_block {
+  display: inline-block;
+}
+
+
+/* Graphs
+-------------------------------------------------- */
+
+.percentage:after {
+  content: "";
+  display: block;
+  height: 3em;
+  background-color: #3d9970;
+}
+
+.percentage {
+  background: repeating-linear-gradient(
+    to right,
+    #ddd,
+    #ddd 1px,
+    #fff 1px,
+    #fff 5%
+  );
+}
+
+#graphs {
+  margin: 10% 0 0 10%;
+}
