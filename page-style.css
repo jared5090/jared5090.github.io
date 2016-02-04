@@ -23,6 +23,10 @@ body {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
+.main_content {
+  width: 1175px;
+}
+
 .container .text-muted {
   margin: 20px 0;
 }
@@ -41,13 +45,8 @@ code {
   display: inline-block;
 }
 
-.container {
-}
-
 .container_table {
-}
-
-.main_content {
+  margin-bottom: 10em;
 }
 
 /* Navbar and Headers
@@ -62,7 +61,7 @@ code {
   margin: 0.75em 2em;
 }
 
-.page-header {
+.heading {
   text-align: center;
 }
 
@@ -74,7 +73,7 @@ code {
   display: none;
 }
 
-.display_table {
+.display_inline {
   display: inline-block;
 }
 
@@ -91,30 +90,24 @@ h2 {
   font-size: 1.5em;
 }
 
-h3 {
-  margin: 0;
+#select_race {
+  margin: 0 auto;
+  width: 100%;
   display: inline-block;
-  font-size: 1.25em;
-  text-align: left;
-  color: #000D10;
+  text-align: center;
 }
 
-.container_table h3 {
-  margin-left: 1em;
+#race_buttons {
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Race List
 -------------------------------------------------- */
 
-#raceList {
-  margin-left: 11.5em;
-  position: absolute;
-  width: auto;
-  display: inline-block;
-}
-
 #raceList button {
   margin: 0.4em 0.8em;
+  display: inline-block;
 }
 
 
@@ -161,7 +154,7 @@ td {
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
   font-weight: 700;
-  padding-left: 2em;
+  padding: 0 1em;
 
 }
 
@@ -176,15 +169,21 @@ td {
   margin: 0.4em 0.6em;
 }
 
-.table_button {
+.table_header div {
   display: inline-block;
-  margin: 0 0 0 4.5em;
+}
+
+.table_header h3 {
+  color: red;
+}
+
+.table_button {
+  margin-left: 5em;
 }
 
 .submit_button, .reset_button {
   margin-bottom: 1em;
   font-family: 'Open Sans', sans-serif;
-  background-color: #CEDBE5;
 }
 
 

@@ -16,8 +16,8 @@ var resultsTable = $('#results_template').html();
 
 
 function printButtons(race) {
-  $('#raceList').append("<button></button>");
-  $('#raceList').find('button').last().attr('id', 'button_race' + race);
+  $('#race_buttons').append("<button></button>");
+  $('#race_buttons').find('button').last().attr('id', 'button_race' + race);
   $('#button_race' + race).text('Race ' + letters[race]);
   //clicking button for a race triggers creation of its table
   //and sets up other click listeners. 
@@ -33,11 +33,11 @@ function printButtons(race) {
 }
 
 //container_table class has default display of NONE.
-//first removes display_table class to ensure only one table is displayed.
+//first removes display_inline class to ensure only one table is displayed.
 function displayTable(race) {
-  $('.container_table').removeClass('display_table');
-  $('#race' + race).closest('.container_table').addClass('display_table');
-  $('#results' + race).closest('.container_table').addClass('display_table');
+  $('.container_table').removeClass('display_inline');
+  $('#race' + race).closest('.container_table').addClass('display_inline');
+  $('#results' + race).closest('.container_table').addClass('display_inline');
 }
 
 function printTable(race) {
@@ -54,7 +54,11 @@ function printTable(race) {
   $('#current_race').find('.submit_button').last().attr('id', 'submit_race' + race);
   var raceID = $('#race' + race);
   //print race title
-  raceID.prepend("<h3>Race " + letters[race] + "</h3>");
+  raceID.find('.table_header').prepend(
+    "<div>" +
+      "<h3>Race " + letters[race] + "</h3>" +
+    "</div>"
+    );
   //print table rows. In first column, name is printed from 2D array.
   //In second column, options are appended to a dropdown menu.
   //First option is the default ('select').
@@ -115,43 +119,6 @@ function randomiseNames(race) {
     containsName = false;
   }
   console.log(raceRandomNames[race]);
-}
-
-
-//Purpose: get options chosen by user.
-//Operation: add event handler to submit button of #userBets form.
-//get value of each select tag and push it to userBets array.
-//activate other functions.
-function getBets(race) {
-  console.log('getBets function');
-  $('#submit_race' + race).on('click', function(event) {
-    event.preventDefault();
-    $('#submit_race' + race).hide();
-    $('#reset_race' + race).show();
-    randomiseNames(race);
-    var position = '';
-    var name = '';
-    for (var j = 0; j < raceNames[race].length; j++) {
-      position = $('#' + raceData['IDs' + [race]][j]).val();
-      name = $('#' + raceData['IDs' + [race]][j]).attr('val');
-      betRanking[position] = name;
-    }
-    console.log('betRanking object');
-    for (var key in betRanking) {
-        console.log("key: " + key + "\nvalue: " + betRanking[key]);
-      }
-    for (var j = 0; j < raceNames[race].length; j++) {
-      raceData['Bets' + [race]].push(betRanking[positions[j]]);
-    }
-
-    //testing
-    console.log(raceData['Bets' + [race]]);
-    checkBets(race);
-    console.log("Points" + ": " + raceData['Points' + race]);
-    // resetBets(i);
-    displayResults(race);
-    betRanking = {};
-  });
 }
 
 //create keys in raceData containing empty arrays.
